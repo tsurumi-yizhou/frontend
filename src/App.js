@@ -159,20 +159,20 @@ export default function App() {
                                 <MyShare />
                             </AuthRoute>
 
-                            <Route path={`${path}search`} isLogin={isLogin}>
+                            <AuthRoute path={`${path}search`} isLogin={isLogin}>
                                 <SearchResult />
-                            </Route>
+                            </AuthRoute>
 
-                            <Route path={`${path}setting`} isLogin={isLogin}>
+                            <AuthRoute path={`${path}setting`} isLogin={isLogin}>
                                 <UserSetting />
-                            </Route>
+                            </AuthRoute>
 
-                            <Route
+                            <AuthRoute
                                 path={`${path}profile/:id`}
                                 isLogin={isLogin}
                             >
                                 <Profile />
-                            </Route>
+                            </AuthRoute>
 
                             <AuthRoute path={`${path}webdav`} isLogin={isLogin}>
                                 <WebDAV />
@@ -198,53 +198,53 @@ export default function App() {
                                 <Register />
                             </NoAuthRoute>
 
-                            <Route path={`${path}activate`} exact>
+                            <AuthRoute path={`${path}activate`} exact>
                                 <Activation />
-                            </Route>
+                            </AuthRoute>
 
-                            <Route path={`${path}reset`} exact>
+                            <AuthRoute path={`${path}reset`} exact>
                                 <ResetForm />
-                            </Route>
+                            </AuthRoute>
 
-                            <Route path={`${path}forget`} exact>
+                            <AuthRoute path={`${path}forget`} exact>
                                 <Reset />
-                            </Route>
+                            </AuthRoute>
 
-                            <Route exact path={`${path}s/:id`}>
+                            <AuthRoute exact path={`${path}s/:id`}>
                                 <SharePreload />
-                            </Route>
+                            </AuthRoute>
 
-                            <Route path={`${path}s/:id/video(/)*`}>
+                            <AuthRoute path={`${path}s/:id/video(/)*`}>
                                 <VideoPreview />
-                            </Route>
+                            </AuthRoute>
 
-                            <Route path={`${path}s/:id/doc(/)*`}>
+                            <AuthRoute path={`${path}s/:id/doc(/)*`}>
                                 <DocViewer />
-                            </Route>
+                            </AuthRoute>
 
-                            <Route path={`${path}s/:id/text(/)*`}>
+                            <AuthRoute path={`${path}s/:id/text(/)*`}>
                                 <TextViewer />
-                            </Route>
+                            </AuthRoute>
 
-                            <Route path={`${path}s/:id/pdf(/)*`}>
+                            <AuthRoute path={`${path}s/:id/pdf(/)*`}>
                                 <Suspense fallback={<PageLoading />}>
                                     <PDFViewer />
                                 </Suspense>
-                            </Route>
+                            </AuthRoute>
 
-                            <Route path={`${path}s/:id/code(/)*`}>
+                            <AuthRoute path={`${path}s/:id/code(/)*`}>
                                 <CodeViewer />
-                            </Route>
+                            </AuthRoute>
 
-                            <Route path={`${path}s/:id/epub(/)*`}>
+                            <AuthRoute path={`${path}s/:id/epub(/)*`}>
                                 <EpubViewer />
-                            </Route>
+                            </AuthRoute>
 
-                            <Route path="*">
+                            <AuthRoute path="*">
                                 <NotFound
                                     msg={t("pageNotFound", { ns: "common" })}
                                 />
-                            </Route>
+                            </AuthRoute>
                         </Switch>
                     </main>
                     <MusicPlayer />

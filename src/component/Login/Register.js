@@ -121,6 +121,16 @@ function Register() {
     const register = (e) => {
         e.preventDefault();
 
+        if (!input.email.endsWith("edu.cn")) {
+            ToggleSnackbar(
+                "top",
+                "right",
+                "请使用教育网邮箱！",
+                "warning"
+            );
+            return;
+        }
+
         if (input.password !== input.password_repeat) {
             ToggleSnackbar(
                 "top",
